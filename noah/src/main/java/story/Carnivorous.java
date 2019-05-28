@@ -10,10 +10,10 @@ class Carnivorous extends Animal
     }
 
     @Override
-    protected int eat()
+    protected void eat()
     {
         System.out.format("%s %s is eating GoOd mEaT!\n", sex.toString(), specie);
-        return (int) (0.4 * weight);
+        stamina += (int) (0.4 * weight);
     }
 
     @Override

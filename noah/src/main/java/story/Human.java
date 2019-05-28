@@ -10,10 +10,10 @@ class Human extends Animal
     }
 
     @Override
-    protected int eat()
+    protected void eat()
     {
-        System.out.println("Eating a ²good meal");
-        return (int) 0.05*weight;
+        System.out.println("Eating a good meal");
+        stamina += 100;
     }
 
     @Override

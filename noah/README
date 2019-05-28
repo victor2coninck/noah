@@ -1,0 +1,42 @@
+"Fais-toi une arche en bois résineux, tu la feras en roseaux et tu l'enduiras
+de bitume en dedans et en dehors.
+
+Entre dans l'arche, toi et toute ta famille, car je t'ai vu seul juste à mes 
+yeux parmi cette génération. 
+
+De tous les animaux purs, tu prendras sept paires, le mâle et la femelle; des
+animaux qui ne sont pas purs, tu prendras un couple, le mâle et la femelle et
+aussi des oiseaux du ciel, sept paires, le mâle et la femelle, pour perpétuer
+la race sur toute la terre." - Genèse 6,7.
+
+
+
+[SUJET]
+L'Arche de Noé.
+Sujet de recrutement Solutech : Evalutation Technique.
+Langage : Java
+Built with Maven and Visual Studio Code
+
+Ce projet décrit l'implementation d'une série de classe d'objets décrivant
+l'histoire de l'Arche de Noé et sa gestion des ressources par son
+capitaine Noé (Noah).
+
+Les noms de classe, de fonction ainsi que les noms des differents attributs
+on été écrit en anglais.
+
+
+
+[ETAT DE L'ART ACTUEL]
+    J'ai choisi de me concentrer sur la représentation et la gestion de la
+nourriture dans l'arche. En effet, la problématique principale de Noé est la
+survie de ses pensionnaires.
+Ces derniers sont donc divisés en deux catégories : Carnivore mangeant de la
+viande (donc potentielement d'autre animaux) et Herbivore mangeant du foin.
+
+Chaque animal mange une fraction de son poid.
+Chaque animal peut se reproduire et ainsi donner naissance à un nouvel animal
+de la même espèce.
+Noé peut pecher, planter du foin.
+
+[INNOVATION]
+    Je voulais 

@@ -17,6 +17,13 @@ class Supply
         grass_supply = 2000;
     }
 
+    public boolean status()
+    {
+        if (meat_supply <= 0 && grass_supply <= 0)
+            return true;
+        return false;
+    }
+
     public int add_meat(int qte)
     {
         meat_supply += qte;
@@ -46,4 +53,33 @@ class Supply
         }
         grass_supply -= qte;
     }
+
+    /**
+     * @return int return the meat_supply
+     */
+    public int getMeat_supply() {
+        return meat_supply;
+    }
+
+    /**
+     * @param meat_supply the meat_supply to set
+     */
+    public void setMeat_supply(int meat_supply) {
+        this.meat_supply = meat_supply;
+    }
+
+    /**
+     * @return int return the grass_supply
+     */
+    public int getGrass_supply() {
+        return grass_supply;
+    }
+
+    /**
+     * @param grass_supply the grass_supply to set
+     */
+    public void setGrass_supply(int grass_supply) {
+        this.grass_supply = grass_supply;
+    }
+
 }

@@ -24,6 +24,14 @@ class Ark
         System.out.println("~~~...We all live in the ark...~~~");
     }
 
+    public void closeLights()
+    {
+        for (Couple c : animals)
+        {
+            c.nightlife();
+        }
+    }
+
     /**
      * @return ArrayList<Couple> return the animals
      */

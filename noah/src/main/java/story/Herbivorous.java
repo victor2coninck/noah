@@ -10,10 +10,10 @@ class Herbivorous extends Animal
     }
 
     @Override
-    protected int eat()
+    protected void eat()
     {
         System.out.format("%s %s is eating veggies!\n", sex.toString(), specie);
-        return (int) (0.5 * weight);
+        stamina += (int) (0.5 * weight);
     }
 
     @Override
@@ -25,6 +25,7 @@ class Herbivorous extends Animal
             Herbivorous bb = new Herbivorous(this.specie, Gender.getRandomGender(), this.weight);
             return Optional.of(bb);
         }
+        System.out.println("Ungodly action attempted...");
         return Optional.empty();
     }
 }

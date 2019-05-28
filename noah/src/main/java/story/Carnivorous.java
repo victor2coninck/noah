@@ -25,6 +25,7 @@ class Carnivorous extends Animal
             Carnivorous bb = new Carnivorous(this.specie, Gender.getRandomGender(), this.weight);
             return Optional.of(bb);
         }
+        System.out.println("Ungodly action attempted...");
         return Optional.empty();
     }
 }

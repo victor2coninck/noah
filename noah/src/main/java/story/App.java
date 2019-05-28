@@ -1,16 +1,9 @@
 package story;
 
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
 
         Carnivorous lion = new Carnivorous("lion", Gender.MALE, 150);
@@ -26,6 +19,7 @@ public final class App {
         noah.board(lion, lionne);
         noah.board(boucM, boucF);
         noah.board(loup, louve);
+
         try {
             noah.feed_animals();
         } catch (NoMoreMeatException e) {
@@ -33,5 +27,8 @@ public final class App {
         } catch (NoMoreGrassException e) {
             noah.crope();
         }
+
+        loup.breed(louve);
+        loup.breed(lion);
     }
 }

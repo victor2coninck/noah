@@ -14,7 +14,6 @@ class Noah extends Human implements Passenger {
     }
 
     private Ark arche;
-    // colombe, tuer, pecher, repeupler, nourrir
 
     public void toEat(Supply food) throws NoMoreGrassException, NoMoreMeatException
     {
@@ -59,4 +58,12 @@ class Noah extends Human implements Passenger {
         }
         System.out.format("This was a nice harvest. We have %d of hay in supply !\n\n", arche.getFood().add_grass(5));
     }
+
+    /**
+     * @return Ark return the arche
+     */
+    public Ark getArche() {
+        return arche;
+    }
+
 }

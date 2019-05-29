@@ -41,7 +41,19 @@
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     </configuration>
                 </plugin>
+                    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>story.App</mainClass>
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
             </plugins>
+
         </pluginManagement>
         <plugins>
             <plugin>

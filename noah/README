@@ -14,15 +14,43 @@ la race sur toute la terre." - Genèse 6,7.
 [SUJET]
 L'Arche de Noé.
 Sujet de recrutement Solutech : Evalutation Technique.
-Langage : Java
-Built with Maven and Visual Studio Code
 
-Ce projet décrit l'implementation d'une série de classe d'objets décrivant
-l'histoire de l'Arche de Noé et sa gestion des ressources par son
-capitaine Noé (Noah).
+Ce projet décrit l'implementation d'une série de classe décrivant l'histoire de
+l'Arche de Noé et sa gestion des ressources par son capitaine Noé (Noah).
+L'application va tout d'abord parser le fichier de données pour en extraire les
+conditions initiales, à savoir, les differentes espèces d'animaux qui embarqueront
+sur l'arche ainsi que le nombre de ressources que Noé chargera dans les stocks
+de nourriture de l'arche.
+S'en suit une simulation des jours qui passeront sur l'arche avec à chaque journée
+son lot d'évènement.
 
-Les noms de classe, de fonction ainsi que les noms des differents attributs
+Les commentaires, les noms de classe, de fonction ainsi que les noms des differents attributs
 on été écrit en anglais.
+
+
+
+[PREREQUIS]
+> Java 8
+> Maven
+
+
+
+[UTILISATION]
+
+COMPILER LE PROGRAMME:
+shell# mvn package -f "pom.xml"
+(pom.xml est au même niveau que ce README)
+
+LANCER LE PROGRAMME:
+shell# java -jar target/noah-1.jar [input_data_filename]
+
+FORMAT FICHIER INPUT DATA:
+1 ère ligne                                : "qte_viande qte_herbe"
+lignes suivantes, une ligne par espèce     : "t:espece:poids"
+
+avec    t       = "h" ou "c" (herbivore ou carnivore)
+        espece  = nom de l'espece
+        poids    = poids du male (le poids de la femelle sera une fraction de ce poids)
 
 
 
@@ -32,11 +60,44 @@ nourriture dans l'arche. En effet, la problématique principale de Noé est la
 survie de ses pensionnaires.
 Ces derniers sont donc divisés en deux catégories : Carnivore mangeant de la
 viande (donc potentielement d'autre animaux) et Herbivore mangeant du foin.
+Si il n'y a plus rien à manger la simulation se termine.
 
 Chaque animal mange une fraction de son poid.
 Chaque animal peut se reproduire et ainsi donner naissance à un nouvel animal
-de la même espèce.
-Noé peut pecher, planter du foin.
+de la même espèce, si les conditions sont propices.
+Noé peut pecher, planter du foin, élever des animaux.
+
+La simulation continue tant que le gameover n'a pas été atteint (stock viande et
+herbe en dessous de 3kg chacun)
+
+
 
 [INNOVATION]
-    Je voulais 
+    Code :
+        - enumeration sur les ratios de consommation de nourriture
+        - implementation du design pattern Observer pour remplacer tout les 
+          println par des notifications à un Listener qui pourra logger/afficher
+          une interface.
+        - gestion d'erreurs sur le parsing
+        - + de gestion d'exception (try/catch)
+        - multithreader les opérations bloquantes
+
+    Simulation :
+        - Les actions que Noé effectue lui consomme de la stamina, il doit manger
+          pour remplir sa stamina, si il n'a pas suffisament de stamina il ne peut
+          effectuer l'action.
+        - Les animaux meurent et disparaissent si on ne les nourrit pas pendant
+          un certain temps
+        - S'il n'nest pas nourrit assez, un carnivore pourra aller tuer et manger
+          un herbivore pendant la nuit.
+        - Un nouveau née met un certain temps avant de pouvoir être transformé
+          en viande.
+        - Faire pousser du foin met du temps, on ne peut alors le recolter tout
+          de suite
+
+    Application :
+        - La simulation pourrait se transformer en un jeu de gestion dans lequel
+          on serait Noé gérant l'arche. L'utilisateur choisira les actions que
+          Noé effectuera.
+        - Autrement, si on incarne dieu on peut influencer directement sur la
+          vie de l'arche et sur le comportement de Noé.

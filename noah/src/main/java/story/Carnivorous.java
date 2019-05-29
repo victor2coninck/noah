@@ -4,11 +4,17 @@ import java.util.Optional;
 
 class Carnivorous extends Animal
 {
+    /*
+    *   Carnivorous Class Constructor, inherit from Animal Class
+    */
     public Carnivorous(String specie, Gender sex, int weight)
     {
         super(specie, sex, weight);
     }
 
+    /*
+    *   Carnivorous are eating MEAT and their consumtion ratio is 1/5 of their weight
+    */
     @Override
     protected void eat()
     {
@@ -16,6 +22,9 @@ class Carnivorous extends Animal
         stamina += (int) (0.4 * weight);
     }
 
+    /*
+    *   Carnivorous descendence is carnivorous
+    */
     @Override
     protected Optional<Animal> breed(Animal partner)
     {

@@ -4,6 +4,15 @@ import java.util.Optional;
 
 class Couple implements Passenger
 {
+    /* Couple attributs */
+    private Animal male;
+    private Animal female;
+    private Optional<Animal> baby;
+
+    /*
+    *   Couple Class Constructor, implements Passenger interface
+    *   A couple must contains two Animal of different gender but same species
+    */
     public Couple(Animal male, Animal female)
     {
         if (male.sex.equals(female.sex) || !male.specie.equals(female.specie))
@@ -16,10 +25,9 @@ class Couple implements Passenger
         this.baby = Optional.empty();
     }
 
-    private Animal male;
-    private Animal female;
-    private Optional<Animal> baby;
-
+    /*
+    *   Each animal EAT and CONSUME supply from the Ark
+    */
     public void toEat(Supply food) throws NoMoreGrassException, NoMoreMeatException
     {
         if (male instanceof Carnivorous)
@@ -36,6 +44,9 @@ class Couple implements Passenger
         female.eat();
     }
 
+    /*
+    *   When the stamina is full, a Couple can breed a baby during night
+    */
     public void nightlife()
     {
         if ((!baby.isPresent()) && (male.getStamina() + female.getStamina() >= 250))
@@ -45,6 +56,8 @@ class Couple implements Passenger
         male.setStamina(10);
         female.setStamina(10);
     }
+
+    //getters and setters
 
     /**
      * @return Animal return the male

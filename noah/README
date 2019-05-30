@@ -15,18 +15,20 @@ la race sur toute la terre." - Genèse 6,7.
 L'Arche de Noé.
 Sujet de recrutement Solutech : Evalutation Technique.
 
-Ce projet décrit l'implementation d'une série de classe décrivant l'histoire de
+Ce projet décrit l'implementation d'une série de classes décrivant l'histoire de
 l'Arche de Noé et sa gestion des ressources par son capitaine Noé (Noah).
 L'application va tout d'abord parser le fichier de données pour en extraire les
-conditions initiales, à savoir, les differentes espèces d'animaux qui embarqueront
+conditions initiales, à savoir, les différentes espèces d'animaux qui embarqueront
 sur l'arche ainsi que le nombre de ressources que Noé chargera dans les stocks
 de nourriture de l'arche.
 S'en suit une simulation des jours qui passeront sur l'arche avec à chaque journée
-son lot d'évènement.
+son lot d'évènements.
 
 Les commentaires, les noms de classe, de fonction ainsi que les noms des differents attributs
 on été écrit en anglais.
 
+Un fichier input_data est présent au même niveau que ce README. Il amène un gameover
+au bout d'environ 13 jours.
 
 
 [PREREQUIS]
@@ -74,21 +76,23 @@ herbe en dessous de 3kg chacun)
 
 [INNOVATION]
     Code :
-        - enumeration sur les ratios de consommation de nourriture
+        - enumeration sur les ratios de consommation de nourriture et d'autre donnée
+          utile à l'etalonnage/équilibrage de la simulation.
         - implementation du design pattern Observer pour remplacer tout les 
           println par des notifications à un Listener qui pourra logger/afficher
-          une interface.
+          une interface ou simplement les logs.
         - gestion d'erreurs sur le parsing
         - + de gestion d'exception (try/catch)
-        - multithreader les opérations bloquantes
+        - multithreader les opérations bloquantes (Noah.fish / Noah.crope)
+        - templater certaines fonctions comme Animal.breed(Animal);
 
     Simulation :
-        - Les actions que Noé effectue lui consomme de la stamina, il doit manger
+        - Les actions que Noé effectue consomment de sa stamina, il doit manger
           pour remplir sa stamina, si il n'a pas suffisament de stamina il ne peut
-          effectuer l'action.
+          pas effectuer l'action voulue.
         - Les animaux meurent et disparaissent si on ne les nourrit pas pendant
           un certain temps
-        - S'il n'nest pas nourrit assez, un carnivore pourra aller tuer et manger
+        - S'il n'est pas nourrit assez, un carnivore pourra aller tuer et manger
           un herbivore pendant la nuit.
         - Un nouveau née met un certain temps avant de pouvoir être transformé
           en viande.
@@ -97,7 +101,13 @@ herbe en dessous de 3kg chacun)
 
     Application :
         - La simulation pourrait se transformer en un jeu de gestion dans lequel
-          on serait Noé gérant l'arche. L'utilisateur choisira les actions que
-          Noé effectuera.
-        - Autrement, si on incarne dieu on peut influencer directement sur la
-          vie de l'arche et sur le comportement de Noé.
+          on controllerai Noé (et sa famille)  gérant l'arche. L'utilisateur
+          choisira les actions que la divine famille effectuera.
+        - Autrement, si dans l'histoire on incarne Dieu à travers une interface
+          permettant de modifier en live certains réglages de l'arche on pourrai 
+          influencer directement sur la vie de l'arche et sur le comportement
+          de la simulation.
+
+
+[CONTACT]
+victor.de-coninck@epita.fr
